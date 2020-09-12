@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C10E4923-5C51-4C9B-B3FC-6DBD26EEDFF4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ModuleCapture</RootNamespace>
+    <AssemblyName>ModuleCapture</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\AA System\AA Machine_HYAA100\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\AA System\AA Machine_HYAA100\USBCame_Cross_0811\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\..\HuaYa\Standard Machine\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\..\HuaYa\Standard Machine\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lin\点亮测试\点亮测试\bin\Debug\BaseDll.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraBase">
+      <HintPath>..\..\HuaYa\Standard Machine\CameraBase.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraDT">
+      <HintPath>..\..\HuaYa\Standard Machine\CameraDT.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraRTV24">
+      <HintPath>..\..\HuaYa\Standard Machine\CameraRTV24.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraV5U">
+      <HintPath>..\..\HuaYa\Standard Machine\CameraV5U.dll</HintPath>
+    </Reference>
+    <Reference Include="CliDll">
+      <HintPath>..\..\HuaYa\Standard Machine\CliDll.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\MVTec\HALCON-12.0\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageConvert">
+      <HintPath>..\..\HuaYa\Standard Machine\ImageConvert.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UserData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\HuaYa\Standard Machine\UserData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CameraUsbDirect.cs" />
+    <Compile Include="Common\CameraUsb.cs" />
+    <Compile Include="Common\ImageChangeHelper.cs" />
+    <Compile Include="Common\MSerialPort.cs" />
+    <Compile Include="Common\SerialPortOperation.cs" />
+    <Compile Include="Module_DT_Dynamic.cs" />
+    <Compile Include="Module_Pylon.cs" />
+    <Compile Include="Module_RTV24.cs" />
+    <Compile Include="MCameraDeviceBase.cs" />
+    <Compile Include="Module_USBDircect.cs" />
+    <Compile Include="Module_V5U.cs" />
+    <Compile Include="Module_USB.cs" />
+    <Compile Include="Module_DT.cs" />
+    <Compile Include="ModuleMgr.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
